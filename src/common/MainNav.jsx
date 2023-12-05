@@ -57,6 +57,9 @@ function MainNav({ isAuthenticated, onLogout, usuario }) {
                             : <></>}       
                         <li className="nav-item">
                             <Link className="nav-link" to="/consultas">Consultas Ex Final</Link>
+                        </li> 
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/#">Jose es una bebita</Link>
                         </li>           
                         
                         
