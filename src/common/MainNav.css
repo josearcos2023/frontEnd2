@@ -1,0 +1,50 @@
+/* MainNav.css */
+
+.navbar {
+    height: 80px;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar-hovered {
+    background-color: white;
+  }
+  
+  .navbar-hovered .nav-link {
+    color: black;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    margin-right: 10px;
+  }
+  
+  .navbar-toggler {
+    border-color: white;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: white;
+  }
+  
+  .navbar-nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link {
+    margin-right: 15px;
+    color: black;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: white;
+  }
+  
+  /* Ajusta otros estilos según tus necesidades */
+  
