@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logooo.png';
 import './MainNav.css';
 
 function MainNav({ isAuthenticated, onLogout, usuario }) {
@@ -16,7 +16,7 @@ function MainNav({ isAuthenticated, onLogout, usuario }) {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top" style={{ backgroundColor: '#66DCF6' }}>
             <div className="container">
-                <Link className="navbar-brand" to="/"> <img src={logo} alt="Logo" width="50" height="50" className="navbar-logo" /> Tec & Trade</Link>
+                <Link className="navbar-brand" to="/"> <img src={logo} alt="Logo" width="90" height="90" className="navbar-logo" /></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
