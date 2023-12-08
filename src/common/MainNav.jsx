@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import logo from '../assets/images/logo.png';
+import './MainNav.css';
 
 function MainNav({ isAuthenticated, onLogout, usuario }) {
     // eslint-disable-next-line react/prop-types
@@ -13,9 +14,9 @@ function MainNav({ isAuthenticated, onLogout, usuario }) {
         localStorage.setItem("pais", usuario[0].pais);
     }
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-dark navbar-dark">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top" style={{ backgroundColor: '#66DCF6' }}>
             <div className="container">
-                <Link className="navbar-brand" to="/"> <img src={logo} alt="Logo" width="50" height="50" className="navbar-logo" /> Wild Cat Games</Link>
+                <Link className="navbar-brand" to="/"> <img src={logo} alt="Logo" width="50" height="50" className="navbar-logo" /> Tec & Trade</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -25,38 +26,21 @@ function MainNav({ isAuthenticated, onLogout, usuario }) {
                             <a className="nav-link" href="#nosotros">Nosotros</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#noticias">Noticias</a>
-                        </li>
-                        {isAuthenticated ?
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/inversiones">Inversiones</Link>
-                            </li>
-                            : <></>}                        
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/proveedores">Proveedores</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/empleados">Empleados</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/pedidos">Pedidos</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/seleccionados">Seleccionados</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/tienda">Tienda</Link>
+                            <Link className="nav-link" to="/tienda">Compra</Link>
                         </li>      
                         <li className="nav-item">
-                            <Link className="nav-link" to="/clientes">Clientes</Link>
+                            <Link className="nav-link" to="/clientes">Venta</Link>
                         </li> 
                         {isAuthenticated ?
                             <li className="nav-item">
                                 <Link className="nav-link" to="/directores">Directores</Link>
                             </li>
-                            : <></>}       
+                            : <></>}      
                         <li className="nav-item">
-                            <Link className="nav-link" to="/consultas">Consultas Ex Final</Link>
+                            <a className="nav-link" href="#noticias">Noticias</a>
+                        </li> 
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/consultas">Consultas</Link>
                         </li>           
                         
                         
