@@ -1,6 +1,8 @@
 .navbar {
-    height: 80px;
+    height: 100px;
     transition: background-color 0.3s;
+    font-size: 1.4em;
+    font-weight: bold;
   }
   
   .navbar-hovered {

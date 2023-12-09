@@ -7,7 +7,6 @@ function MainHeader() {
     <header id="main-header">
       <div className='container'>
         <h1><span>TEC &amp;</span></h1>
-        <p>eCommerce de Productos Electrónicos</p>
       </div>
     </header>
   );
