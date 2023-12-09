@@ -22,10 +22,10 @@ h1 {
 }
 
 h2 {
-  font-weight: 200;
+  font-weight: bold;
   font-size: 48px;
   letter-spacing: -2px;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 h3 {
