@@ -1,0 +1,29 @@
+/* Objetivos.css */
+#objetivos {
+    background-color: #f8f8f8;
+    padding: 40px 0;
+  }
+  
+  .objetivo {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .objetivo:hover {
+    transform: scale(1.05);
+  }
+  
+  .objetivo h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .objetivo p {
+    color: #666;
+    font-size: 1rem;
+  }
+  

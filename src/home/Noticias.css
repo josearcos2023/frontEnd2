@@ -1,0 +1,62 @@
+/* Estilos generales para el área de noticias */
+#noticias {
+    padding: 30px 0;
+    background-color: #f8f8f8;
+  }
+  
+  /* Estilos para el contenedor de noticias */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Estilos para el título de noticias */
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase; 
+    font-weight: bold;
+  }
+  
+  /* Estilos para cada artículo de noticia */
+  .col {
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  /* Efecto de escala al pasar el ratón sobre una noticia */
+  .col:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Estilos para la imagen de la noticia */
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* Estilos para el contenido de la noticia */
+  article > div {
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  /* Estilos para el título de la noticia */
+  h3 {
+    color: #1870c2;
+    margin-bottom: 15px;
+    text-transform: uppercase; 
+  }
+  
+  /* Estilos para el texto de la noticia */
+  p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  

@@ -1,3 +1,8 @@
+import noticia1Imagen from '../assets/images/noticia1.jpg';
+import noticia2Imagen from '../assets/images/noticia2.jpg';
+import noticia3Imagen from '../assets/images/noticia3.jpg';
+import './Noticias.css';
+
 function Noticias() {
   return (
     <>
@@ -6,24 +11,28 @@ function Noticias() {
           <h2>Noticias</h2>
           <div className="row">
             <article className="col">
-              <h3>Noticia 1</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur adipisci dolore dolor fuga non cum cumque alias iure recusandae enim, accusamus doloremque voluptatibus fugit tenetur provident saepe autem aperiam id, numquam esse facilis! Vero, dicta veritatis?</p>
-              <p>At hic consectetur itaque labore repellat rem, reprehenderit distinctio ab amet dolores saepe nobis aut dignissimos est in facere quasi, dolorum voluptas, blanditiis pariatur. Nesciunt qui placeat dolorem culpa eveniet ab illo velit voluptatibus voluptates recusandae?</p>
+              <img src={noticia1Imagen} alt="Noticia 1" className="noticia-imagen" />
+              <h3>El auge del comercio online de productos usados</h3>
+              <p>El mercado de productos usados en línea está experimentando un crecimiento significativo. Con la creciente conciencia ambiental y la búsqueda de opciones económicas, más personas están recurriendo a plataformas en línea para comprar y vender productos usados, desde dispositivos electrónicos hasta ropa y muebles.</p>
+              <p>Este cambio en el comportamiento del consumidor está impulsando la economía circular y brindando oportunidades para la reutilización y el reciclaje. Descubre cómo el comercio online de productos usados está transformando la forma en que compramos y vendemos.</p>
             </article>
             <article className="col">
-              <h3>Noticia 2</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quas ex necessitatibus voluptatem maxime accusamus amet eligendi. Magni ullam quos accusamus maiores labore ab possimus. Harum repudiandae voluptatum nam saepe iure. Illo nemo hic alias iusto.</p>
-              <p>Cum deserunt corrupti dolorem eius animi temporibus? Aut id excepturi perspiciatis vitae temporibus amet doloremque, commodi ad, fugit harum, quas ratione asperiores distinctio. Alias temporibus, autem sint cum porro eligendi, saepe illum nemo quisquam, voluptatem corporis?</p>
+              <img src={noticia2Imagen} alt="Noticia 2" className="noticia-imagen" />
+              <h3>Consejos para comprar ropa de segunda mano en línea</h3>
+              <p>La compra de ropa de segunda mano en línea puede ser una excelente manera de obtener prendas de calidad a precios asequibles. Sin embargo, es importante seguir algunos consejos para garantizar una experiencia de compra exitosa. Desde la verificación de la calidad hasta la investigación de las marcas, descubre cómo hacer compras inteligentes de ropa de segunda mano en línea.</p>
+              <p>Explora las plataformas populares y aprende a identificar las mejores ofertas sin comprometer la calidad. ¡Encuentra tu próximo tesoro de moda de manera sostenible!</p>
             </article>
             <article className="col">
-              <h3>Noticia 3</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint laudantium impedit, unde distinctio non recusandae fuga necessitatibus, inventore accusamus in autem officia error mollitia culpa veritatis quia aliquam dolorum. Eius veniam minima obcaecati sapiente aut fugit!</p>
-              <p>Hic consequuntur iusto tempore asperiores odit quis saepe quisquam, deleniti eligendi aliquid perferendis atque nisi velit dolorem? Magni accusantium modi adipisci ipsum. Eius eum a maxime, unde ipsa illo praesentium quod, dignissimos facilis quas velit earum!</p>
+              <img src={noticia3Imagen} alt="Noticia 3" className="noticia-imagen" />
+              <h3>El impacto ambiental positivo del comercio online de productos usados</h3>
+              <p>El comercio online de productos usados no solo es beneficioso para el bolsillo, sino también para el medio ambiente. Descubre cómo la reutilización de productos contribuye a reducir la cantidad de residuos textiles y electrónicos, disminuyendo así la huella ambiental.</p>
+              <p>Lee historias inspiradoras de personas que han adoptado un enfoque sostenible al comprar y vender productos usados. Únete al movimiento de compras conscientes y descubre cómo tu elección puede marcar la diferencia.</p>
             </article>
           </div>
         </div>
       </section>
     </>
-  )
+  );
 }
-export default Noticias
+
+export default Noticias;
