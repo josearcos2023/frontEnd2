@@ -1,6 +1,6 @@
-import banner1 from '../assets/images/banner1.jpg';
-import banner2 from '../assets/images/banner2.jpg';
-import banner3 from '../assets/images/banner3.jpg';
+import banner1 from '../assets/images/carrusel1.jpg';
+import banner2 from '../assets/images/carrusel2.jpg';
+import banner3 from '../assets/images/carrusel3.jpg';
 function MainBanner() {
   return (
     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -11,21 +11,21 @@ function MainBanner() {
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={banner1} className="d-block w-100" alt="..."/>
+      <img src={banner1} className="d-block w-100" height="720px" width="1920px" alt="..."/>
       <div className="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
     <div className="carousel-item">
-      <img src={banner2} className="d-block w-100" alt="..."/>
+      <img src={banner2} className="d-block w-100" height="720px" width="1920px" alt="..."/>
       <div className="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div className="carousel-item">
-      <img src={banner3} className="d-block w-100" alt="..."/>
+      <img src={banner3} className="d-block w-100" height="720px" width="1920px" alt="..."/>
       <div className="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>
