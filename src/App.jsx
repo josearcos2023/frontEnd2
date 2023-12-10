@@ -12,7 +12,8 @@ import ProductoDetalles from './pages/ProductoDetalles'
 import Carrito from './pages/Carrito'
 import Seleccionados from './pages/Seleccionados'
 import Pedidos from './pages/Pedidos'
-import Clientes from './pages/Clientes'
+/*import Clientes from './pages/Clientes'*/
+import Productos from './pages/Productos';
 import Consultas from './pages/Consultas'
 import ConsultasDetalles from './pages/ConsultasDetalles'
 import Login from './pages/Login'
@@ -40,54 +41,61 @@ function App() {
     alert("Su sesión ha sido cerrada");
   };
   return (
-    <>
-      <BrowserRouter>
-        <MainHeader />
-        <MainNav isAuthenticated={isAuthenticated} onLogout={handleLogout} usuario={usuario} />
-        <Routes>
-          <Route path='/' element={<Inicio/>}/>          
-          <Route path='/empleados' element={<Empleados/>}/>
-          <Route path='/proveedores' element={<Proveedores/>}/>
-          <Route path='/tienda' element={<Tienda/>}/>
-          <Route path="/productodetalles/:idproducto" element={<ProductoDetalles/>} />
-          <Route path='/carrito' element={<Carrito/>}/>
-          <Route path='/seleccionados' element={<Seleccionados/>}/>
-          <Route path='/pedidos' element={<Pedidos/>}/>
-          <Route path='/clientes' element={<Clientes/>}/>
-          <Route path='/consultas' element={<Consultas/>}/>          
-          <Route path='/consultasdetalles' element={<ConsultasDetalles/>}/>     
-          <Route path="/sesioncerrada" element={<SesionCerrada />} />
-          <Route
-            path="/login"
-            element={<Login onLogin={(data) => handleLogin(data)} isAuthenticated={isAuthenticated} />}
-          /> 
+      <>
+        <BrowserRouter>
+          <MainHeader />
+          <MainNav isAuthenticated={isAuthenticated} onLogout={handleLogout} usuario={usuario} />
+          <Routes>
+            <Route path='/' element={<Inicio/>}/>
+            <Route path='/empleados' element={<Empleados/>}/>
+            <Route path='/proveedores' element={<Proveedores/>}/>
+            <Route path='/tienda' element={<Tienda/>}/>
+            <Route path="/productodetalles/:idproducto" element={<ProductoDetalles/>} />
+            <Route path='/carrito' element={<Carrito/>}/>
+            <Route path='/seleccionados' element={<Seleccionados/>}/>
+            <Route path='/pedidos' element={<Pedidos/>}/>
+            {/* De Cientes a Productos */ }
+            <Route path='/productos' element={<Productos/>}/>
+            <Route path='/consultas' element={<Consultas/>}/>
+            <Route path='/consultasdetalles' element={<ConsultasDetalles/>}/>
+            <Route path="/sesioncerrada" element={<SesionCerrada />} />
+            <Route
+                path="/login"
+                element={<Login onLogin={(data) => handleLogin(data)} isAuthenticated={isAuthenticated} />}
+            />
 
-          <Route path="/directores" element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Directores />
-            </ProtectedRoute>
-          } />
-          <Route path="/escritorio" element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Escritorio />
-            </ProtectedRoute>
-          } />
+            <Route path="/directores" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Directores />
+              </ProtectedRoute>
+            } />
+            <Route path="/escritorio" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Escritorio />
+              </ProtectedRoute>
+            } />
 
-          <Route path="/inversiones" element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Inversiones />
-            </ProtectedRoute>
-          } />
-          
-          
-        </Routes>
+            <Route path="/productos" element={
+              <ProtectedRoute>
+                <Productos />
+              </ProtectedRoute>
+            }/>
 
-        <MainFooter />
-      </BrowserRouter>
+            <Route path="/inversiones" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Inversiones />
+              </ProtectedRoute>
+            } />
+
+
+          </Routes>
+
+          <MainFooter />
+        </BrowserRouter>
 
 
 
-    </>
+      </>
   )
 }
 

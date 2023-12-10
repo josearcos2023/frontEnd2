@@ -27,28 +27,32 @@ function MainNav({ isAuthenticated, onLogout, usuario }) {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/tienda">Compra</Link>
-                        </li>      
-                        <li className="nav-item">
+                        </li>
+                        {/*<li className="nav-item">
                             <Link className="nav-link" to="/clientes">Venta</Link>
-                        </li> 
+                        </li>*/
+                    }
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/productos">Productos</Link>{/*Renombrando a Productos*/}
+                        </li>
+
                         {isAuthenticated ?
                             <li className="nav-item">
                                 <Link className="nav-link" to="/directores">Directores</Link>
                             </li>
-                            : <></>}      
+                            : <></>}
                         <li className="nav-item">
                             <a className="nav-link" href="#noticias">Noticias</a>
-                        </li> 
+                        </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/consultas">Consultas</Link>
-                        </li>           
-                        
-                        
-                        
+                        </li>
+
+
                     </ul>
                     <ul className="navbar-nav mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/carrito">
+                        <Link className="nav-link" to="/carrito">
                             <i className="bi bi-basket-fill" title="Carrito de compras"></i> Carrito</Link>
                         </li>
                         {isAuthenticated
