@@ -22,10 +22,13 @@ function Tienda() {
 
   const dibujarLista = () => {
     return (
-        <ul className="list-group" id="lista-categorias">
+        <ul className="list-group" id="lista-categorias" style={{backgroundColor: 'rgb(102, 220, 246)'}}>
             {listaCategorias.map( item => 
-                <li className="list-group-item" key={item.idcategoria} 
-                    title = {item.descripcion} onClick = {(event) => seleccionarCategoria(event, item)}>
+                <li className="list-group-item" 
+                    style={{ marginBottom: '10px' }}    
+                    key={item.idcategoria} 
+                    title = {item.descripcion} 
+                    onClick = {(event) => seleccionarCategoria(event, item)}>
                     {item.nombre}
                 </li>
             )}
@@ -52,8 +55,10 @@ function Tienda() {
             <div className="container">
                 <h2>Tienda</h2>
                 <div className="row">
-                    <div className="col-md-2">
-                        { dibujarLista() }
+                    <div className="col-md-2" style={{ backgroundColor: 'rgb(102, 220, 246)', borderRadius: '10px' }}>
+                        <h4 className="p-2" style={{ color: '#333' }}>Categorías</h4>
+                        <hr />
+                        {dibujarLista()}
                     </div>
                     <div className="col-md-10">
                         <h3>{categoriaSeleccionada.nombre}</h3>

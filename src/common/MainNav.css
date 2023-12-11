@@ -42,8 +42,16 @@
     transition: color 0.3s;
   }
   
-  .nav-link:hover {
-    color: white;
+  .navbar-collapse.show {
+      background-color: white;
   }
-  
+
+  .navbar-collapse.show .nav-link {
+      color: black;
+  }
+
+  .navbar-collapse.show .navbar-toggler-icon {
+      background-color: black;
+  }
+
   

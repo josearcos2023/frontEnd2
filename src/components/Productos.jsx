@@ -17,11 +17,15 @@ function Productos(props) {
 
 
     const leerServicio = (idcategoria) => {
+        if(idcategoria === undefined || idcategoria === null){
+            idcategoria = 'idcategoria';
+        }
         const rutaServicio = "https://servicios.campus.pe/productos.php?idcategoria=" + idcategoria;
+        console.log(rutaServicio);
         fetch(rutaServicio)
             .then(response => response.json())
             .then(data => {
-                //console.log(data);
+                console.log(data);
                 setListaProductos(data);
             })
     }
