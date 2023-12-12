@@ -4,7 +4,13 @@
   }
 
 .card-body{
-  background-color: black;
+  background-color: #1870c2;
+}
+.card-text{
+  color: white;
+}
+.card-title{
+  color: white;
 }
 .recolor{
   background-color: #FFC01D;

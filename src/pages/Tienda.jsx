@@ -22,7 +22,7 @@ function Tienda() {
 
   const dibujarLista = () => {
     return (
-        <ul className="list-group" id="lista-categorias" style={{backgroundColor: 'rgb(102, 220, 246)'}}>
+        <ul className="list-group" id="lista-categorias" style={{backgroundColor: '#1870c2'}}>
             {listaCategorias.map( item => 
                 <li className="list-group-item" 
                     style={{ marginBottom: '10px' }}    
@@ -55,7 +55,7 @@ function Tienda() {
             <div className="container">
                 <h2>Tienda</h2>
                 <div className="row">
-                    <div className="col-md-2" style={{ backgroundColor: 'rgb(102, 220, 246)', borderRadius: '10px' }}>
+                    <div className="col-md-2" style={{ backgroundColor: '#1870c2', borderRadius: '10px' }}>
                         <h4 className="p-2" style={{ color: '#333' }}>Categorías</h4>
                         <hr />
                         {dibujarLista()}
