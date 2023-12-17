@@ -63,9 +63,6 @@ function Productos(props) {
 
     const agregarCarrito = (item) => {
         item.cantidad = 1;
-        if (item.preciorebajado !== "0") {
-            item.precio = item.preciorebajado;
-        }
         console.log(item);
         let carrito = [];
         if (sessionStorage.getItem("carritocompras")) {
