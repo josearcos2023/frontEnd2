@@ -11,7 +11,7 @@ function Tienda() {
     }, [])
 
     const leerServicio = () => {
-      const rutaServicio = "https://servicios.campus.pe/categorias.php";
+      const rutaServicio = "http://localhost:8080/api_int_2023/categorias/getAll";
       fetch(rutaServicio)
           .then(response => response.json())
           .then(data => {
@@ -63,7 +63,7 @@ function Tienda() {
                     <div className="col-md-10">
                         <h3>{categoriaSeleccionada.nombre}</h3>
                         <small>{categoriaSeleccionada.descripcion}</small>
-                        <Productos categoriaProductos = {categoriaSeleccionada.idcategoria}/>
+                        <Productos categoriaProductos = {categoriaSeleccionada.idCategoria}/>
                     </div>
                 </div>
             </div>
