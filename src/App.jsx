@@ -23,6 +23,10 @@ import Escritorio from './pages/Escritorio'
 import SesionCerrada from './pages/SesionCerrada'
 import ProtectedRoute from './utils/ProtectedRoute'
 
+/*Nuevas rutas*/ 
+import Noticias from './home/Noticias';
+import QuienesSomos from './pages/QuienesSomos';
+
 
 
 function App() {
@@ -50,6 +54,10 @@ function App() {
             <Route path='/empleados' element={<Empleados/>}/>
             <Route path='/proveedores' element={<Proveedores/>}/>
             <Route path='/tienda' element={<Tienda/>}/>
+
+            <Route path='/noticias' element={<Noticias />} />
+            <Route path='/nosotros' element={<QuienesSomos />} />
+
             <Route path="/productodetalles/:idproducto" element={<ProductoDetalles/>} />
             <Route path='/carrito' element={<Carrito/>}/>
             <Route path='/seleccionados' element={<Seleccionados/>}/>
