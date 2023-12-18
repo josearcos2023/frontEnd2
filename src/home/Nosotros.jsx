@@ -1,32 +1,38 @@
 import React from "react";
 import './Nosotros.css';
 
+// Importa las imágenes
+import iphoneImg from '../assets/images/iphone.jpg';
+import calzadoImg from '../assets/images/calzados.jpg';
+import zapatillasImg from '../assets/images/zapatillas.jpg';
+import accesoriosImg from '../assets/images/accesorios.jpg';
+
 function Nosotros() {
   // Dummy data for the cards
   const cardData = [
     {
       id: 1,
-      imageSrc: "http://wildcat.games/test/wow.png", // Replace with actual image URL
-      title: "World of Warcraft",
-      description: "49.99$"
+      imageSrc: iphoneImg,
+      title: "iPhone 13",
+      description: "El último modelo de iPhone con características innovadoras."
     },
     {
       id: 2,
-      imageSrc: "http://wildcat.games/test/civ6.jpg", // Replace with actual image URL
-      title: "Civilization 6",
-      description: "159.99$"
+      imageSrc: calzadoImg,
+      title: "Zapatos Elegantes",
+      description: "Encuentra zapatos elegantes para cualquier ocasión especial."
     },
     {
       id: 3,
-      imageSrc: "http://wildcat.games/test/ck3.png", // Replace with actual image URL
-      title: "Crusader Kings 3",
-      description: "59.99$"
+      imageSrc: zapatillasImg,
+      title: "Zapatillas Deportivas",
+      description: "Descubre nuestra colección de zapatillas deportivas cómodas y modernas."
     },
     {
       id: 4,
-      imageSrc: "http://wildcat.games/test/rl.jpg", // Replace with actual image URL
-      title: "Rocket League",
-      description: "19.99$"
+      imageSrc: accesoriosImg,
+      title: "Reloj de Moda",
+      description: "Completa tu estilo con nuestro elegante reloj de moda."
     },
   ];
 
@@ -42,7 +48,7 @@ function Nosotros() {
                   <div className="card-body">
                     <h5 className="card-title">{card.title}</h5>
                     <p className="card-text">{card.description}</p>
-                    <button className="btn btn-primary recolor">Shop Now</button>
+                    <button className="btn btn-primary recolor">Ver más</button>
                   </div>
                 </div>
               </div>

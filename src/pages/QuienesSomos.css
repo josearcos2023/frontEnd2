@@ -11,3 +11,103 @@
     width: auto; 
   }
   
+  .text-tec.display-4,
+  .text-trade.display-4 {
+    font-size: 3rem; 
+    text-align: center;
+  }
+
+  .text-tec.display-3,
+  .text-trade.display-3 {
+    text-align: center;
+    font-size: 3rem; 
+  }
+
+  .d-flex.text-center.mb-5 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row.justify-content-center.text-center {
+    margin-top: 2rem;
+    justify-content: space-between;
+  }
+  
+  .team.card {
+    border: 1px solid #ddd;
+    transition: all 0.5s linear;
+  }
+  
+  .team.card:hover {
+    transform: scale(1.05);
+    border-color: #66DCF6; 
+    border: 1px solid darkred;
+  }
+
+  .team-social a {
+    border-color: #66DCF6; 
+    color: #fff; 
+  }
+  
+  .team-social a:hover {
+    background-color: #4DB8D6; 
+    border-color: #4DB8D6;
+    color: #fff; 
+  }
+  
+  
+  .team.card:focus {
+    outline: none;
+  }
+  
+  
+  .card-img-top.team-img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .card-body.text-center.p-0 {
+    padding: 1.25rem;
+  }
+  
+  .team-text {
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  .team-text h5 {
+    margin-bottom: 0;
+  }
+  
+  .team-text i {
+    font-size: 0.8rem;
+  }
+  
+  .team-social {
+    padding: 1rem;
+  }
+  
+  .team-social a.btn {
+    font-size: 1rem;
+    margin: 0 0.2rem;
+  }
+  
+  /* Estilos para dispositivos grandes (lg) y medianos (md) */
+@media (min-width: 768px) {
+  .team {
+    flex: 0 0 25%; /* Ajusta el ancho de las tarjetas según tus necesidades */
+  }
+}
+
+/* Estilos para dispositivos pequeños (sm) y extra pequeños (xs) */
+@media (max-width: 767px) {
+  .team {
+    flex: 0 0 100%; /* Hace que las tarjetas ocupen el 100% del ancho disponible */
+  }
+}
+.team{
+  text-align: center;
+}
+.row{
+  text-align: center;
+}

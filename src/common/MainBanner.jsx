@@ -1,6 +1,9 @@
 import banner1 from '../assets/images/carrusel1.jpg';
 import banner2 from '../assets/images/carrusel2.jpg';
 import banner3 from '../assets/images/carrusel3.jpg';
+
+import './MainBanner.css';
+
 function MainBanner() {
   return (
     <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -11,24 +14,24 @@ function MainBanner() {
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={banner1} className="d-block w-100" height="720px" width="1920px" alt="..."/>
+      <img src={banner1} className="d-block w-100" alt="..." />
       <div className="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+        <h5 className="carousel-title">Descubre las Últimas Tendencias</h5>
+        <p className="carousel-description">Explora nuestra colección de productos de alta calidad y estilo único.</p>
       </div>
     </div>
     <div className="carousel-item">
-      <img src={banner2} className="d-block w-100" height="720px" width="1920px" alt="..."/>
+      <img src={banner2} className="d-block w-100" alt="..." />
       <div className="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <h5 className="carousel-title">Ofertas Exclusivas</h5>
+        <p className="carousel-description">Aprovecha nuestras ofertas exclusivas y encuentra lo que necesitas al mejor precio.</p>
       </div>
     </div>
     <div className="carousel-item">
-      <img src={banner3} className="d-block w-100" height="720px" width="1920px" alt="..."/>
+      <img src={banner3} className="d-block w-100" alt="..." />
       <div className="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+        <h5 className="carousel-title">Envío Rápido y Seguro</h5>
+        <p className="carousel-description">Entregamos tus productos de manera rápida y segura, para que disfrutes cuanto antes.</p>
       </div>
     </div>
   </div>
