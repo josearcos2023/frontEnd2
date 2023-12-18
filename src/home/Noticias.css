@@ -42,7 +42,7 @@ h2 {
 /* Estilos para la imagen de la noticia */
 img {
   width: 100%;
-  max-height: 200px; /* Ajusta según sea necesario */
+  max-height: 300px; 
   border-radius: 8px;
 }
 
