@@ -1,189 +1,70 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import img1 from '../assets/images/nueva-imagen-1.jpg';
+import img2 from '../assets/images/nueva-imagen-2.jpg';
+import img3 from '../assets/images/nueva-imagen-3.jpg';
 
-function Consultas() {
-  const [listaPedidos, setListaPedidos] = useState([]);
-  const [listaPedidosFiltrado, setListaPedidosFiltrado] = useState([]);
-  const [textoBuscar, setTextoBuscar] = useState("");
-  const [ascendente, setAscendente] = useState(1);
-  const [columnaAnterior, setColumnaAnterior] = useState("idpedido");
-  const [pagina, setPagina] = useState(0);
-  const [filasPagina] = useState(25);
-  const [numPaginas, setNumPaginas] = useState(0);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    leerServicio();
-  }, []);
-
-  const leerServicio = () => {
-    const rutaServicio = "https://servicios.campus.pe/pedidos.php";
-    fetch(rutaServicio)
-      .then((response) => response.json())
-      .then((data) => {
-        setListaPedidos(data);
-        setListaPedidosFiltrado(data);
-        setNumPaginas(Math.ceil(data.length / filasPagina));
-      });
-  };
-
-  const cargarDetallePedido = (idPedido) => {
-    // Store the selected ID locally for use on another page
-    localStorage.setItem("selectedPedidoId", idPedido);
-    // Navigate to the "ConsultasDetalles" page
-    navigate(`/consultasdetalles`);
-  };
-
-  const buscarPedido = (event) => {
-    const textoB = event.target.value;
-    setTextoBuscar(textoB);
-    const resultado = listaPedidos.filter((pedido) =>
-      pedido.usuario.toUpperCase().includes(textoB.toUpperCase())
-    );
-    setListaPedidosFiltrado(resultado);
-    setNumPaginas(Math.ceil(resultado.length / filasPagina)); // Update the number of pages based on filtered list
-    setPagina(0); // Reset the current page to the first page after searching
-  };
-
-  const seleccionarColumna = (event) => {
-    const columnaSeleccionada = event.target.getAttribute("columna");
-    let ascendentex = ascendente;
-    if (columnaAnterior === columnaSeleccionada) {
-      ascendentex = -ascendentex;
-    } else {
-      ascendentex = 1;
-    }
-    setAscendente(ascendentex);
-    setColumnaAnterior(columnaSeleccionada);
-
-    setListaPedidosFiltrado(
-      [...listaPedidosFiltrado].sort((a, b) => {
-        const valorA = a[columnaSeleccionada];
-        const valorB = b[columnaSeleccionada];
-        if (valorA < valorB) {
-          return -ascendentex;
-        }
-        if (valorA > valorB) {
-          return ascendentex;
-        }
-        return 0;
-      })
-    );
-  };
-
-  const avanzar = () => {
-    if (pagina < numPaginas - 1) {
-      setPagina(pagina + 1);
-    }
-  };
-
-  const retroceder = () => {
-    if (pagina > 0) {
-      setPagina(pagina - 1);
-    }
-  };
-
-  const generarPaginacion = () => {
-    const items = [];
-    for (let i = 0; i < numPaginas; i++) {
-      items.push(
-        <li
-          key={i}
-          className={`page-item ${pagina === i ? "active" : ""}`}
-          aria-current={pagina === i ? "page" : null}
-        >
-          <button className="page-link" onClick={() => setPagina(i)}>
-            {i + 1}
-          </button>
-        </li>
-      );
-    }
-    return items;
-  };
-
-  const dibujarTablaPedidos = () => {
-    return (
-      <table className="table">
-        <thead>
-          <tr>
-            <th columna="idpedido" onClick={seleccionarColumna}>
-              ID
-            </th>
-            <th columna="fechapedido" onClick={seleccionarColumna}>
-              Fecha
-            </th>
-            <th columna="usuario" onClick={seleccionarColumna}>
-              Usuario
-            </th>
-            <th columna="nombres" onClick={seleccionarColumna}>
-              Nombres
-            </th>
-            <th columna="total" onClick={seleccionarColumna}>
-              Total
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {listaPedidosFiltrado
-            .slice(pagina * filasPagina, (pagina + 1) * filasPagina)
-            .map((pedido) => (
-              <tr
-                key={pedido.idpedido}
-                onClick={() => cargarDetallePedido(pedido.idpedido)}
-              >
-                <td>{pedido.idpedido}</td>
-                <td>{pedido.fechapedido}</td>
-                <td>{pedido.usuario}</td>
-                <td>{pedido.nombres}</td>
-                <td>{pedido.total}</td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
-    );
-  };
- 
-
+const ConsultasView = () => {
   return (
-    <section className="padded">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="mb-3">
-              <input
-                type="text"
-                value={textoBuscar}
-                onChange={buscarPedido}
-                className="form-control"
-                placeholder="Buscar por usuario..."
-              />
-            </div>
-            {dibujarTablaPedidos()}
-            <nav aria-label="...">
-              <ul className="pagination">
-                <li className={`page-item ${pagina === 0 ? "disabled" : ""}`}>
-                  <button className="page-link" onClick={retroceder}>
-                    Previous
-                  </button>
-                </li>
-                {generarPaginacion()}
-                <li
-                  className={`page-item ${
-                    pagina === numPaginas - 1 ? "disabled" : ""
-                  }`}
-                >
-                  <button className="page-link" onClick={avanzar}>
-                    Next
-                  </button>
-                </li>
-              </ul>
-            </nav>
-          </div>          
+    <div className="container">
+      <h1 className="title_lps_beneficios text-center pt-5 mb-5" style={{ fontSize: '2.5rem' }}>
+          TENEMOS LO QUE TU NEGOCIO NECESITA
+      </h1>
+      <div className="row justify-content-center align-items-center">
+        {/* Excelente servicio posventa */}
+        <div className="col-lg-3 col-sm-12 text-center">
+          <div className="bs-img-square img_lps_beneficios2 text-center text-lg-left">
+            <picture>
+              <source srcSet={img1} media="(min-width: 1201px)" />
+              <source srcSet={img1} media="(min-width: 800px)" />
+              <source srcSet={img1} media="(min-width:400px)" />
+              <source srcSet={img1} media="(min-width:0px)" />
+              <img loading="lazy" src={img1} alt="Excelente servicio posventa Tec Trade" />
+            </picture>
+          </div>
+          <div className="lps_box_beneficios mb-5">
+            <h6 className="title_lps_beneficios_2 text-lg-left">Atención personalizada <br /> 24/7</h6>
+            <p className="text_lps_beneficios_2 text-lg-left">Nos apasiona dar una atención personalizada las 24 horas del día, los 7 días de la semana. Contamos con varios canales de atención y soporte local.</p>
+          </div>
         </div>
+
+        {/* No requiere instalación */}
+        <div className="col-lg-3 col-sm-12 text-center">
+          <div className="bs-img-square img_lps_beneficios2 text-center text-lg-left">
+            <picture>
+              <source srcSet={img2} media="(min-width: 1201px)" />
+              <source srcSet={img2} media="(min-width: 800px)" />
+              <source srcSet={img2} media="(min-width:400px)" />
+              <source srcSet={img2} media="(min-width:0px)" />
+              <img loading="lazy" src={img2} alt="No requiere instalación Tec Trade" />
+            </picture>
+          </div>
+          <div className="lps_box_beneficios mb-5">
+            <h6 className="title_lps_beneficios_2 text-lg-left">Sin complicaciones, <br />sin instalación</h6>
+            <p className="text_lps_beneficios_2 text-lg-left">La flexibilidad que necesitas la tiene Tec Trade. Es un sistema moderno 100% online. No requiere instalación en equipos y funciona desde cualquier dispositivo con acceso a internet.</p>
+          </div>
+        </div>
+
+        {/* Sin contratos a largo plazo */}
+        <div className="col-lg-3 col-sm-12 text-center">
+          <div className="bs-img-square img_lps_beneficios2 text-center text-lg-left">
+            <picture>
+              <source srcSet={img3} media="(min-width: 1201px)" />
+              <source srcSet={img3} media="(min-width: 800px)" />
+              <source srcSet={img3} media="(min-width:400px)" />
+              <source srcSet={img3} media="(min-width:0px)" />
+              <img loading="lazy" src={img3} alt="Sin contratos a largo plazo Tec Trade" />
+            </picture>
+          </div>
+          <div className="lps_box_beneficios mb-5">
+            <h6 className="title_lps_beneficios_2 text-lg-left">Libertad para tu <br />negocio</h6>
+            <p className="text_lps_beneficios_2 text-lg-left">Podrás disfrutar de todos los beneficios de Tec Trade sin amarrarte a contratos de largo plazo. Confiamos en nuestro excelente producto y calidad de atención para atenderte por mucho tiempo.</p>
+          </div>
+        </div>
+
       </div>
-    </section>
+      {/* fin row*/}
+    </div>
   );
-}
+};
 
-
-export default Consultas;
+export default ConsultasView;

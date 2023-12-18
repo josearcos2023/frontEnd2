@@ -37,4 +37,12 @@
 .btnCarrito:hover{
     color: var(--color1);
 }
+.card{
+    max-width: 200px;
+}
 
+.card-img-top{
+    max-height: 250px;
+    width: auto;
+    height: auto;
+}

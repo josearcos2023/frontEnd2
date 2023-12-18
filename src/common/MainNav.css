@@ -2,7 +2,7 @@
   height: 100px;
   font-size: 1em;
   font-weight: bold;
-  background-color: #66DCF6;
+  background-color: #66DCF6 !important;
 }
 
 .navbar-brand {

@@ -14,7 +14,7 @@ function MainNav({ isAuthenticated, onLogout, usuario }) {
         localStorage.setItem("pais", usuario[0].pais);
     }
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-body-tertiary sticky-top" style={{ backgroundColor: '#66DCF6' }}>
+        <nav className="navbar navbar-expand-lg sticky-top" style={{ backgroundColor: '#66DCF6' }}>
             <div className="container">
                 <Link className="navbar-brand" to="/"> <img src={logo} alt="Logo" width="90" height="90" className="navbar-logo" /></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
