@@ -20,6 +20,8 @@ import ProtectedRoute from './utils/ProtectedRoute'
 /*Nuevas rutas*/ 
 import Noticias from './home/Noticias';
 import QuienesSomos from './pages/QuienesSomos';
+import Login2 from "./pages/Login2.jsx";
+import Register from "./pages/Register.jsx";
 
 
 
@@ -45,6 +47,8 @@ function App() {
           <MainNav isAuthenticated={isAuthenticated} onLogout={handleLogout} usuario={usuario} />
           <Routes>
             <Route path='/' element={<Inicio/>}/>
+            <Route path="/login2" element={<Login2/>} />
+            <Route path="/register" element={<Register/>} />
             <Route path='/tienda' element={<Tienda/>}/>
 
             <Route path='/noticias' element={<Noticias />} />
@@ -62,6 +66,7 @@ function App() {
                 path="/login"
                 element={<Login onLogin={(data) => handleLogin(data)} isAuthenticated={isAuthenticated} />}
             />
+
 
             <Route path="/productos" element={
               <ProtectedRoute>
